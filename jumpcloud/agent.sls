@@ -66,22 +66,22 @@ remove_jumpcloud_agent_installer:
 
 jumpcloud_agent_installer:
   file.managed:
-    - name: 'C:\tmp\JumpCloudInstaller.exe'
+    - name: 'C:\\tmp\\JumpCloudInstaller.exe'
     - source: {{ jumpcloud_settings.lookup.pkg_url }}
     - skip_verify: {{ jumpcloud_settings.lookup.pkg_verify }}
     - source_hash: {{ jumpcloud_settings.lookup.pkg_hash }}
-    - unless: 'IF EXIST "C:\Program Files (x86)\JumpCloud\jumpcloud-agent.exe" ( exit 0 ) ELSE ( exit 1 )'
+    - unless: 'IF EXIST "C:\\Program Files (x86)\\JumpCloud\\jumpcloud-agent.exe" ( exit 0 ) ELSE ( exit 1 )'
 
 jumpcloud_agent_install:
   cmd.run:
     - name: "C:\tmp\JumpCloudInstaller.exe -k {{ jumpcloud_settings.connect_key }} /VERYSILENT /NORESTART"
-    - unless: 'IF EXIST "C:\Program Files (x86)\JumpCloud\jumpcloud-agent.exe" ( exit 0 ) ELSE ( exit 1 )'
+    - unless: 'IF EXIST "C:\\Program Files (x86)\\JumpCloud\\jumpcloud-agent.exe" ( exit 0 ) ELSE ( exit 1 )'
     - require:
       - file: jumpcloud_agent_installer
 
 remove_jumpcloud_agent_installer:
   file.absent:
-    - name: 'C:\tmp\JumpCloudInstaller.exe'
+    - name: 'C:\\tmp\\JumpCloudInstaller.exe'
     - require:
       - cmd: jumpcloud_agent_install
 
