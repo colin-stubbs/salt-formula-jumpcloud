@@ -28,13 +28,15 @@ Selectively includes jumpcloud.agent or jumpcloud.sssd states based on O/S type 
 
 Installs agent package in various ways; configurable using pillar see pillar.example.sls for guidance.
 
-NOTE:
-- Tested on MacOS (Sierra 10.12.6)
-- Yet to be tested on Windows
-- Yet to be tested on Linux
+.. note::
 
-TODO:
-- Breakdown official kickstart script to provide cleaner/safer installation method
+    - Tested on MacOS (Sierra 10.12.6)
+    - Yet to be tested on Windows
+    - Yet to be tested on Linux
+
+.. note::
+
+    - Breakdown official kickstart script to provide cleaner/safer installation method
 
 ``jumpcloud.sssd``
 -------
