@@ -3,6 +3,10 @@ jumpcloud
 
 Formula to set up and configure the JumpCloud based authentication services.
 
+Visit the `JumpCloud website <https://www.jumpcloud.com>` to find out more.
+
+Agent package installation is primarily based on the official documentation found `here <https://support.jumpcloud.com/customer/portal/articles/2389320-agent-deployment-via-command-line>`
+
 .. note::
 
     See the full `Salt Formulas installation and usage instructions
