@@ -1,0 +1,26 @@
+{% import_yaml 'jumpcloud/defaults.yaml' as default_settings %}
+
+{% set os_family_map = salt['grains.filter_by']({
+    'MacOS': {
+      'pkg_url': 'https://s3.amazonaws.com/jumpcloud-windows-agent/production/jumpcloud-agent.pkg',
+      'pkg_verify': True,
+      'pkg_hash': '1ff3083ab169688a205e933c0be02739914d99ac807555787725a9ba649b0939',
+    },
+    'Windows': {
+      'pkg_url': 'https://s3.amazonaws.com/jumpcloud-windows-agent/production/JumpCloudInstaller.exe',
+      'pkg_verify': True,
+      'pkg_hash': '398707813791597b9787e7987c6f26f80f98012e18915f719779e9f838cb1cb9',
+    },
+    'default': {
+      'kickstart_url': 'https://kickstart.jumpcloud.com/Kickstart'
+    },
+  }, grain='os_family', default='default', merge=salt['pillar.get']('jumpcloud:lookup')) %}
+
+{% do default_settings.jumpcloud.lookup.update(os_family_map) %}
+
+{% set jumpcloud_settings = salt['pillar.get'](
+    'jumpcloud',
+    default=default_settings.jumpcloud,
+    merge=True,
+  )
+%}

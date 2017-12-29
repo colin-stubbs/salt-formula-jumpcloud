@@ -1,0 +1,5 @@
+{
+"publicKickstartUrl": "https://kickstart.jumpcloud.com:443",
+"privateKickstartUrl": "https://private-kickstart.jumpcloud.com:443",
+"connectKey": "{{ connect_key }}"
+}

@@ -1,0 +1,7 @@
+jumpcloud:
+  lookup:
+    locations:
+      install_dir: '/opt/jc'
+  connect_key: ''
+  linux:
+    config_method: 'sssd'
