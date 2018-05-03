@@ -5,14 +5,22 @@
       'pkg_url': 'https://s3.amazonaws.com/jumpcloud-windows-agent/production/jumpcloud-agent.pkg',
       'pkg_verify': True,
       'pkg_hash': '1ff3083ab169688a205e933c0be02739914d99ac807555787725a9ba649b0939',
+      'locations': {
+        'install_dir': '/opt/jc',
+      },
     },
     'Windows': {
       'pkg_url': 'https://s3.amazonaws.com/jumpcloud-windows-agent/production/JumpCloudInstaller.exe',
       'pkg_verify': True,
       'pkg_hash': '398707813791597b9787e7987c6f26f80f98012e18915f719779e9f838cb1cb9',
+      'locations': {
+        'install_dir': 'C:\\Program Files (x86)\\JumpCloud',
+      },
     },
     'default': {
-      'kickstart_url': 'https://kickstart.jumpcloud.com/Kickstart'
+      'locations': {
+        'install_dir': '/opt/jc',
+      },
     },
   }, grain='os_family', default='default', merge=salt['pillar.get']('jumpcloud:lookup')) %}
 

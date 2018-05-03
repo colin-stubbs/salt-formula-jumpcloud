@@ -1,7 +1,5 @@
 jumpcloud:
-  lookup:
-    locations:
-      install_dir: '/opt/jc'
+  kickstart_url: 'https://kickstart.jumpcloud.com/Kickstart'
   connect_key: ''
   linux:
     config_method: 'sssd'
