@@ -4,28 +4,11 @@
 
 {% if grains.kernel == 'Linux' %}
 
-{% if jumpcloud_settings.linux.config_method == 'package' %}
-
-{# TODO #}
-
-{% elif jumpcloud_settings.linux.config_method == 'sssd' %}
-
-{# at this point all this does is try to pull in states from the sssd forumula #}
-{# available here: https://github.com/colin-stubbs/salt-formula-sssd #}
-
-include:
-  - sssd
-  - sssd.sysauth
-
-{% else %}
-
-{# Attempt to use official kickstart method #}
+{# Use official kickstart method to obtain package/s #}
 jumpcloud_agent_install:
   cmd.run:
     - name: "curl --silent --show-error --header 'x-connect-key: {{ jumpcloud_settings.connect_key }}' {{ jumpcloud_settings.kickstart_url }} | sudo bash"
     - unless: 'test -d /opt/jc'
-
-{% endif %}
 
 {% elif grains.os_family == 'MacOS' %}
 
