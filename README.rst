@@ -30,16 +30,24 @@ Installs agent package in various ways; configurable using pillar see pillar.exa
 
 .. note::
 
-    - Tested on MacOS (Sierra 10.12.6)
-    - Yet to be tested on Windows
-    - Yet to be tested on Linux
+    - Tested on MacOS (10.12.6 / 10.13.0 )
+    - Tested on Windows 10 Pro
+    - Tested on CentOS 7, Ubuntu LTS and Debian
 
 .. note::
 
-    - Breakdown official kickstart script to provide cleaner/safer installation method
+    - TODO
+        - Breakdown official kickstart script to provide cleaner/safer installation method ?
 
 ``jumpcloud.sssd``
 -------
 
 At this point all this does is try to pull in states from the sssd forumula,
 available here: https://github.com/colin-stubbs/salt-formula-sssd
+
+
+.. note::
+
+    Q: Why would you want to use sssd instead of the full JumpCloud agent?
+
+    A: Do you trust the JumpCloud agent to have full root level access to your system with an explicit ability to perform remote command execution   ?

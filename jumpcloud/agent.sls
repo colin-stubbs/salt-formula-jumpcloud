@@ -2,6 +2,8 @@
 
 {% from "jumpcloud/map.jinja" import jumpcloud_settings with context %}
 
+{# Based on https://support.jumpcloud.com/customer/portal/articles/2389320-agent-deployment-via-command-line #}
+
 {% if grains.kernel == 'Linux' %}
 
 {# Use official kickstart method to obtain package/s #}
