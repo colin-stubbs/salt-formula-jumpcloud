@@ -1,4 +1,5 @@
 jumpcloud:
+  lookup: {}
   kickstart_url: 'https://kickstart.jumpcloud.com/Kickstart'
   connect_key: ''
   linux:
